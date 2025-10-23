@@ -33,6 +33,40 @@ You can follow along using the free version of LAStools, which is sufficient for
 
 For the following examples, we will assume the raw `.laz` file is in a folder `C:\lidar_project\raw\` and you want to save the processed outputs to `C:\lidar_project\processed\`. Replace these paths with your own as needed.
 
+::: callout-tip
+
+LAStools commands can be called through R (or other programming languages) by constructing and calling the command as a string using functions shell(). For clarity, we will show the commands here as they would be run directly in a Windows command prompt.
+
+If you would like to run these commands from R, you can use the following template:
+
+```{r, eval=F}
+RLAStools <- function(LAStoolsDir = "",
+                      LAStool,
+                      input,
+                      arguments = NULL,
+                      quiet = TRUE) {
+  t1 <- Sys.time()  # Start time
+  cmd <- paste(paste(LAStoolsDir, LAStool, sep = ''), '-i', input, arguments)
+  shell(cmd)  # Execute command
+  t2 <- Sys.time()  # End time
+  if (!quiet) {
+    glue::glue("Command took {round(difftime(t2, t1, units = 'secs'), 2)} seconds.")
+  }
+  return(cmd)
+}
+
+# Example to perform lastile
+RLAStools(
+  LAStoolsDir = "C:/path/to/LAStools/bin/",
+  LAStool = "lastile",
+  input = '"C:/lidar_project/raw/*.laz"',
+  arguments = '-odir "C:/lidar_project/processed/tiled" -olaz -tile_size 500 -buffer 0',
+  quiet = FALSE
+)
+
+```
+
+
 ## Tiling with `lastile`
 
 The first step in processing is often to tile the data.

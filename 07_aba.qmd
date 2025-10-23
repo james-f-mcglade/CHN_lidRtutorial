@@ -43,7 +43,7 @@ library(dplyr)
 
 In doing so we can apply models to lidar derived metric rasters over wider coverages to create estimate maps of key *forest inventory variables* such as stem volume, basal area, and stem density.
 
-```{r, include = FALSE}
+```{r, include = TRUE}
 #| label: fig-white2013-knitr
 #| fig-cap: "ABA workflow - Figure 4 in White et al. 2013."
 #| fig-alt: "A diagram showing the area-based approach workflow."
@@ -206,7 +206,7 @@ For more information read: [White 2017](https://publications.gc.ca/collections/c
 
 We will generate simple linear models for each of our three forest attributes using these three lidar metrics as predictors and our `r nrow(read.csv("data/plots/plots_all.csv"))` field plots as samples.
 
-```{r, include = FALSE}
+```{r, include = TRUE}
 #| label: fig-white2017-knitr
 #| fig-cap: "Overview of area-based model development from Figure 3 in White et al. 2017"
 #| fig-alt: "White et al. 2017 - A model development and application guide for generating an enhanced forest inventory using airborne laser scanning data and an area-based approach"
