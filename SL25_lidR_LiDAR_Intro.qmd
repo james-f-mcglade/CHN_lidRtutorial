@@ -1,6 +1,6 @@
 ---
 title: "Airborne lidar Data Manipulation and Visualization for Forestry Applications"
-author: "Liam A.K. Irwin, Brent Murray, Sadie Russel, Nicholas C. Coops"
+author: "Liam A.K. Irwin, Brent Murray, Sadie Russell, Nicholas C. Coops"
 favicon: img/logo.png
 format:
   revealjs:
@@ -27,7 +27,7 @@ fig-dpi: 300
 
 -   Liam A.K. Irwin - PhD Student 
 -   Brent A. Murray - PhD Student
--   Sadie Russel - PhD Student
+-   Sadie Russell - PhD Student
 -   Nicholas C. Coops - Professor
 
 Integrated Remote Sensing Studio

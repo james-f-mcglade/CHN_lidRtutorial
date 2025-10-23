@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "SL25_lidR_LiDAR_Intro.html#presenters",
+    "href": "SL25_lidR_LiDAR_Intro.html#presenters",
+    "title": "Airborne lidar Data Manipulation and Visualization for Forestry Applications",
+    "section": "Presenters",
+    "text": "Presenters\n\nLiam A.K. Irwin - PhD Student\nBrent A. Murray - PhD Student\nSadie Russell - PhD Student\nNicholas C. Coops - Professor\n\nIntegrated Remote Sensing Studio University of British Columbia Vancouver, Canada"
+  },
+  {
+    "objectID": "SL25_lidR_LiDAR_Intro.html#overview",
+    "href": "SL25_lidR_LiDAR_Intro.html#overview",
+    "title": "Airborne lidar Data Manipulation and Visualization for Forestry Applications",
+    "section": "Overview",
+    "text": "Overview\n\nLight Detection and Ranging (lidar)\nIntroduction to the lidR package\nIntroduction to LAStools\nWorkshop outline"
+  },
+  {
+    "objectID": "SL25_lidR_LiDAR_Intro.html#what-is-lidar",
+    "href": "SL25_lidR_LiDAR_Intro.html#what-is-lidar",
+    "title": "Airborne lidar Data Manipulation and Visualization for Forestry Applications",
+    "section": "What is lidar?",
+    "text": "What is lidar?\n\nLight Detection and Ranging\nActive form of remote sensing\nMeasures distance to target surfaces with millions of narrow light pulses\nAirborne laser scanning performs lidar systematically from aircraft or drones"
+  },
+  {
+    "objectID": "SL25_lidR_LiDAR_Intro.html#lidar-data-point-clouds",
+    "href": "SL25_lidR_LiDAR_Intro.html#lidar-data-point-clouds",
+    "title": "Airborne lidar Data Manipulation and Visualization for Forestry Applications",
+    "section": "Lidar Data – Point Clouds",
+    "text": "Lidar Data – Point Clouds\n\n\n\nDiscrete returns are aggregated into point clouds (.LAS/.LAZ)\n\nLidar points have three-dimensional (XYZ) coordinates, and other attributes (Intensity, ReturnNumber, etc…)\n\nPoint clouds can be processed into vegetation structure summaries with lidR\n\n\n\n\n\nAs with many remote sensing data analyses tasks we are seeking to produce information from simplification to pull a signal of interest (in this case variability in vegetation structure) out of our dataset (a dense point cloud of three-dimensional coordinates that characterize the vegetation)\nTo do so we often generate summary metrics that act similarly to spectral indices in passive optical remote sensing, they ratio or generate statistics on the distribution of points (max, mean height, canopy cover, percentiles, leaf-area density profiles)"
+  },
+  {
+    "objectID": "SL25_lidR_LiDAR_Intro.html#lidr",
+    "href": "SL25_lidR_LiDAR_Intro.html#lidr",
+    "title": "Airborne lidar Data Manipulation and Visualization for Forestry Applications",
+    "section": "lidR",
+    "text": "lidR\n\n\n\nWritten by Jean-Romain Roussel\n\nPackage for manipulating and visualizing ALS data\n\nWritten entirely open source within R-geospatial ecosystem (terra/sf)\n\nMost processes run efficiently with back-end C++ code"
+  },
+  {
+    "objectID": "SL25_lidR_LiDAR_Intro.html#lastools",
+    "href": "SL25_lidR_LiDAR_Intro.html#lastools",
+    "title": "Airborne lidar Data Manipulation and Visualization for Forestry Applications",
+    "section": "LAStools",
+    "text": "LAStools\n\n\n\nIndustry grade software suite produced by rapidlasso\n\n52 command-line tools for mutlicore batch processing lidar data\nMore memory efficient than lidR (doesn’t load as dataframe)\nSome tools required paid license"
+  },
+  {
+    "objectID": "SL25_lidR_LiDAR_Intro.html#r-lidar",
+    "href": "SL25_lidR_LiDAR_Intro.html#r-lidar",
+    "title": "Airborne lidar Data Manipulation and Visualization for Forestry Applications",
+    "section": "r-lidar",
+    "text": "r-lidar\n\n\n\nlidR author Jean-Romain Roussel is commited to maintaining the lidR package as fully open source\nHe now runs r-lidar; a consulting and development company targeted at lidar applications\nVisit r-lidar.com for more information\n\n\n\n\n\na"
+  },
+  {
+    "objectID": "SL25_lidR_LiDAR_Intro.html#workshop-outline",
+    "href": "SL25_lidR_LiDAR_Intro.html#workshop-outline",
+    "title": "Airborne lidar Data Manipulation and Visualization for Forestry Applications",
+    "section": "Workshop Outline",
+    "text": "Workshop Outline\n\nIntroduction to Lidar, LAStools, and lidR (09:00)\nPreprocessing with LAStools (9:20)\nReading LAS and LAZ files (09:30)\nPoint Classification and filtering (9:35)\nDigital Terrain Models and Height Normalization (9:40)\nCanopy Height Models (9:50)\nLidar Summary Metrics (9:55)\nBreak (10:15-10:45)\nFile Collection Processing Engine (10:45)\nRegions of Interest (11:0)\nArea Based Approach (11:10)\nIndividual Tree Detection and Segmentation (11:30)\nQuestions (11:50)"
+  },
+  {
+    "objectID": "SL25_lidR_LiDAR_Intro.html#get-set-up",
+    "href": "SL25_lidR_LiDAR_Intro.html#get-set-up",
+    "title": "Airborne lidar Data Manipulation and Visualization for Forestry Applications",
+    "section": "Get Set Up!",
+    "text": "Get Set Up!\nhttps://liamirwin.github.io/SL25_lidRtutorial/"
+  }
+]
