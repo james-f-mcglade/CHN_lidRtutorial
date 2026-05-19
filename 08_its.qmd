@@ -23,7 +23,7 @@ rm(list = ls(globalenv()))
 
 # *Ensure 'concaveman' is installed for tree segmentation*
 if (!requireNamespace("concaveman", quietly = TRUE)) {
-  install.packages("concaveman")
+  install.packages("concaveman", repos = "https://cloud.r-project.org")
 }
 
 # Load all required packages

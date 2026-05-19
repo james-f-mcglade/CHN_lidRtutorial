@@ -5,7 +5,7 @@ pkgs <- c("cranlogs", "lubridate", "scales", "ggplot2", "dplyr")
 installed <- rownames(installed.packages())
 to_install <- setdiff(pkgs, installed)
 if (length(to_install)) {
-  install.packages(to_install)
+  install.packages(to_install, repos = "https://cloud.r-project.org")
 }
 
 # use cranlogs to count number of monthly and cumulative downloads of lidR package

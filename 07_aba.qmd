@@ -231,19 +231,17 @@ ba_cf <- lm_ba$coefficients
 sph_cf <- lm_sph$coefficients
 ```
 
-## Model Deployment
-
 Now that we have our models, we can apply them to wall-to-wall lidar metrics calculated across the entire Forêt Montmorency. These metrics have been pre-computed from the larger ALS catalog coverage of 160,000 hectares in area.
 
 ```{r plot_forest_metrics, echo = FALSE, message = FALSE, warning = FALSE}
-bdy_met <- rast("data/metrics/fm_mets_20m.tif")
+metrics_rast <- rast("data/metrics/fm_mets_20m.tif")
 
 library(tidyterra)
 library(ggplot2)
 library(patchwork)
-p1 <- bdy_met$zq95 %>% autoplot()+ theme_classic() + labs(fill = "95th percentile of height (m)") + theme(legend.position = 'bottom')
-p2 <- bdy_met$pzabove2 %>% autoplot() + theme_classic() + labs(fill = "Canopy Cover - Percentage of points above 2m (%)") + theme(legend.position = 'bottom')
-p3 <- bdy_met$zskew %>% autoplot()+ theme_classic()+ labs(fill = "Skewness of height distribution") + theme(legend.position = 'bottom')
+p1 <- metrics_rast$zq95 %>% autoplot()+ theme_classic() + labs(fill = "95th percentile of height (m)") + theme(legend.position = 'bottom')
+p2 <- metrics_rast$pzabove2 %>% autoplot() + theme_classic() + labs(fill = "Canopy Cover - Percentage of points above 2m (%)") + theme(legend.position = 'bottom')
+p3 <- metrics_rast$zskew %>% autoplot()+ theme_classic()+ labs(fill = "Skewness of height distribution") + theme(legend.position = 'bottom')
 
 ```
 
@@ -270,7 +268,129 @@ p2
 p3
 ```
 
+
 :::
+
+### Non-Forest Mask
+
+Before applying our predictive models, it is important to mask out non-forest areas (e.g. roads, water bodies, unsampled forest types) from our wall-to-wall metrics. Applying models trained on forest plots to non-forest pixels will produce spurious predictions.[White et al. 2013 (Section 4.4.1)](https://publications.gc.ca/collections/collection_2013/rncan-nrcan/Fo148-1-10-eng.pdf)
+
+In this example our forest mask is a polygon representing forested land cover, pixels falling outside this polygon are set to `NA`. 
+
+Beneath each masked raster, observe how the 'population' of pixel metric values changes following this critical step.
+
+[Download the forest mask (.gpkg, 4.1 MB)](./data/forest_mask.gpkg)
+
+```{r mapview_mask, echo = FALSE}
+# Read forest mask polygon for visualization
+forest_mask_sf <- st_read("data/forest_mask.gpkg", quiet = TRUE)
+
+mapview::mapviewOptions(basemaps = "Esri.WorldImagery")
+
+mapview::mapview(
+  forest_mask_sf,
+  layer.name = "Forest Mask",
+  alpha.regions = 0.20,
+  color = "darkgreen",
+  lwd = 1.5
+)
+```
+
+
+```{r mask_metrics, message = FALSE, warning = FALSE}
+# Read forest mask polygon
+forest_mask <- vect("data/forest_mask.gpkg")
+
+# Apply the mask directly - pixels outside the forest polygon become NA
+metrics_masked <- mask(metrics_rast, forest_mask)
+```
+
+::: {.panel-tabset}
+
+## Canopy Height (zq95)
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height = 6}
+#| label: fig-mask-zq95
+#| fig-cap: "95th percentile of height after non-forest masking, with before/after density distributions."
+
+m1 <- ggplot() + geom_spatraster(data = metrics_masked$zq95) +
+  scale_fill_viridis_c(na.value = "transparent") +
+  theme_classic() + labs(fill = "zq95 (m)") +
+  theme(legend.position = "bottom")
+
+d_both <- rbind(
+  data.frame(value = as.vector(values(metrics_rast$zq95, na.rm = TRUE)), mask = "Before"),
+  data.frame(value = as.vector(values(metrics_masked$zq95, na.rm = TRUE)), mask = "After")
+)
+
+d1 <- ggplot(d_both, aes(x = value, fill = mask)) +
+  geom_density(alpha = 0.5) +
+  scale_fill_manual(values = c("Before" = "grey60", "After" = "forestgreen")) +
+  theme_classic() + labs(x = "zq95 (m)", y = "Density", fill = NULL) +
+  theme(legend.position = "bottom")
+
+m1 / d1 + plot_layout(heights = c(3, 1))
+```
+
+
+## Canopy Cover (pzabove2)
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height = 6}
+#| label: fig-mask-pzabove2
+#| fig-cap: "Canopy cover after non-forest masking, with before/after density distributions."
+
+m1 <- ggplot() + geom_spatraster(data = metrics_masked$pzabove2) +
+  scale_fill_viridis_c(na.value = "transparent") +
+  theme_classic() + labs(fill = "pzabove2 (%)") +
+  theme(legend.position = "bottom")
+
+d_both <- rbind(
+  data.frame(value = as.vector(values(metrics_rast$pzabove2, na.rm = TRUE)), mask = "Before"),
+  data.frame(value = as.vector(values(metrics_masked$pzabove2, na.rm = TRUE)), mask = "After")
+)
+
+d1 <- ggplot(d_both, aes(x = value, fill = mask)) +
+  geom_density(alpha = 0.5) +
+  scale_fill_manual(values = c("Before" = "grey60", "After" = "forestgreen")) +
+  theme_classic() + labs(x = "pzabove2 (%)", y = "Density", fill = NULL) +
+  theme(legend.position = "bottom")
+
+m1 / d1 + plot_layout(heights = c(3, 1))
+```
+
+## Variability (zskew)
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height = 6}
+#| label: fig-mask-zskew
+#| fig-cap: "Skewness of height distribution after non-forest masking, with before/after density distributions."
+
+m1 <- ggplot() + geom_spatraster(data = metrics_masked$zskew) +
+  scale_fill_viridis_c(na.value = "transparent") +
+  theme_classic() + labs(fill = "zskew") +
+  theme(legend.position = "bottom")
+
+d_both <- rbind(
+  data.frame(value = as.vector(values(metrics_rast$zskew, na.rm = TRUE)), mask = "Before"),
+  data.frame(value = as.vector(values(metrics_masked$zskew, na.rm = TRUE)), mask = "After")
+)
+
+d1 <- ggplot(d_both, aes(x = value, fill = mask)) +
+  geom_density(alpha = 0.5) +
+  scale_fill_manual(values = c("Before" = "grey60", "After" = "forestgreen")) +
+  theme_classic() + labs(x = "zskew", y = "Density", fill = NULL) +
+  theme(legend.position = "bottom")
+
+m1 / d1 + plot_layout(heights = c(3, 1))
+```
+
+:::
+
+After masking, we replace our original metrics raster with the masked version for all subsequent model application steps.
+
+```{r}
+# Use masked metrics for model application
+metrics_rast <- metrics_masked
+```
 
 ### Applying Models
 
@@ -301,8 +421,6 @@ sph_lm_r <- function(zq95,zskew,pzabove2){
 In this example we will achieve this using the [`terra`](https://rspatial.github.io/terra/) package with the `lapp` function that will apply our function to the wall-to-wall metrics raster to generate maps of our three forest attributes. `lapp` applies a function to each cell of our multi-layer metric raster.
 
 ```{r}
-# Load the full metrics raster
-metrics_rast <- rast("data/metrics/fm_mets_20m.tif")
 plot(metrics_rast)
 # Apply models to generate wall-to-wall forest attribute estimates
 # Merchantable Stem Volume
