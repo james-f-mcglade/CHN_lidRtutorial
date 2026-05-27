@@ -99,10 +99,6 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./00_preprocess.html"> 
-<span class="menu-text">0-PREPROCESS</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="./01_read.html"> 
 <span class="menu-text">1-LAS</span></a>
   </li>  
@@ -181,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Liam A.K. Irwin, Brent Murray, Sadie Russell, Nicholas C. Coops </p>
+             <p>James McGlade, Heather Harper, Mara Mclaughlin, Nicholas Schindelhauer, Luca Iribarren </p>
           </div>
   </div>
     
@@ -197,10 +193,11 @@ ul.task-list li input[type="checkbox"] {
 <section id="presenters" class="level2">
 <h2 class="anchored" data-anchor-id="presenters">Presenters</h2>
 <ul>
-<li>Liam A.K. Irwin - PhD Student</li>
-<li>Brent A. Murray - PhD Student</li>
-<li>Sadie Russell - PhD Student</li>
-<li>Nicholas C. Coops - Professor</li>
+<li>James McGlade - Post Doctoral Researcher</li>
+<li>Heather Harper - Masters Student</li>
+<li>Mara Mclaughlin - Masters Student</li>
+<li>Nicholas Schindelhaur - Research Assistant</li>
+<li>Luca Iribarren - Research Assistant</li>
 </ul>
 <p>Integrated Remote Sensing Studio University of British Columbia Vancouver, Canada</p>
 <p><a href="img/UBC_IRSS_logo.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="img/UBC_IRSS_logo.png" class="img-fluid"></a></p>
@@ -210,7 +207,6 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><strong>Li</strong>ght <strong>D</strong>etection <strong>a</strong>nd <strong>R</strong>anging (lidar)</li>
 <li>Introduction to the <code>lidR</code> package</li>
-<li>Introduction to <code>LAStools</code></li>
 <li>Workshop outline</li>
 </ul>
 </section>
@@ -235,7 +231,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
 <li>Lidar points have three-dimensional (<code>XYZ</code>) coordinates, and other attributes (<code>Intensity</code>, <code>ReturnNumber</code>, etc…)<br>
 </li>
-<li>Point clouds can be processed into vegetation structure summaries with <strong>lidR</strong></li>
+<li>Point clouds can be processed into vegetation structure summaries and terrain models with <strong>lidR</strong></li>
 </ul>
 </div><div class="column">
 <p><a href="img/plot_z_360.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="img/plot_z_360.gif" class="img-fluid" style="width:120.0%"></a></p>
@@ -348,19 +344,18 @@ Attaching package: 'dplyr'</code></pre>
 <section id="workshop-outline" class="level2 smaller">
 <h2 class="smaller anchored" data-anchor-id="workshop-outline">Workshop Outline</h2>
 <ul>
-<li>Introduction to Lidar, LAStools, and lidR (09:00)</li>
-<li>Preprocessing with LAStools (9:20)</li>
-<li>Reading LAS and LAZ files (09:30)</li>
-<li>Point Classification and filtering (9:35)</li>
-<li>Digital Terrain Models and Height Normalization (9:40)</li>
-<li>Canopy Height Models (9:50)</li>
-<li>Lidar Summary Metrics (9:55)</li>
-<li><strong>Break (10:15-10:45)</strong></li>
-<li>File Collection Processing Engine (10:45)</li>
-<li>Regions of Interest (11:0)</li>
-<li>Area Based Approach (11:10)</li>
-<li>Individual Tree Detection and Segmentation (11:30)</li>
-<li>Questions (11:50)</li>
+<li>Introduction to Lidar and lidR</li>
+<li>Reading LAS and LAZ files</li>
+<li>Point Classification and filtering</li>
+<li>Digital Terrain Models and Height Normalization</li>
+<li>Canopy Height Models</li>
+<li>Lidar Summary Metrics</li>
+<li><strong>Break (20 minutes)</strong></li>
+<li>File Collection Processing Engine</li>
+<li>Regions of Interest</li>
+<li>Area Based Approach</li>
+<li>Individual Tree Detection and Segmentation</li>
+<li>Questions</li>
 </ul>
 </section>
 <section id="get-set-up" class="level2 smaller">
@@ -368,8 +363,7 @@ Attaching package: 'dplyr'</code></pre>
 <p>https://liamirwin.github.io/SL25_lidRtutorial/</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://liamirwin.github.io/SL25_lidRtutorial/"><img src="img/qrcode.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%"></a></p>
-</figure>
+<p><a href="https://github.com/james-f-mcglade/CHN_lidRtutorial/tree/main">
 </div>
 
 
