@@ -256,23 +256,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="quarto-title-meta-heading">Affiliation</div>
   
     <div class="quarto-title-meta-contents">
+    <p class="author">Liam A.K. Irwin </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Integrated Remote Sensing Studio, University of British Columbia
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Brent A. Murray </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Integrated Remote Sensing Studio, University of British Columbia
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Sadie J.S Russell  </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Integrated Remote Sensing Studio, University of British Columbia
+          </p>
+      </div>
+  <div class="quarto-title-meta-contents">
     <p class="author">James McGlade </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Integrated Remote Sensing Studio, University of British Columbia
-          </p>
-      </div>
-    <div class="quarto-title-meta-contents">
-    <p class="author">Heather Harper </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Integrated Remote Sensing Studio, University of British Columbia
-          </p>
-      </div>
-    <div class="quarto-title-meta-contents">
-    <p class="author">Mara Mclaughlin </p>
   </div>
   <div class="quarto-title-meta-contents">
         <p class="affiliation">
@@ -302,13 +310,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="people" class="level2">
 <h2 class="anchored" data-anchor-id="people">People</h2>
 <p><strong>Presenters:</strong></p>
-<p><a href="https://www.researchgate.net/profile/Liam-Irwin-3">James McGlade (UBC)</a></p>
-<p><a href="https://www.researchgate.net/profile/Brent-Murray-4">Heather Harper (UBC)</a></p>
-<p><a href="https://ca.linkedin.com/in/sadie-russell-556094271">Mara Mclaughlin (UBC)</a></p>
+<p><a href="https://www.linkedin.com/in/james-mcglade-2941a0201/">James McGlade (UBC)</a></p>
+<p><a Heather Harper (UBC)</a></p>
+<p><a href="https://www.linkedin.com/in/mara-mclaughlin-1390b73b8/">Mara Mclaughlin (UBC)</a></p>
 </section>
 <section id="materials" class="level2">
 <h2 class="anchored" data-anchor-id="materials">Materials</h2>
-<p><a href="https://github.com/liamirwin/SL25_lidRtutorial">This repository</a> contains the material for an 3 hour <code>lidR</code> tutorial workshop. You should install the material on your own machine from <a href="https://github.com/liamirwin/SL25_lidRtutorial">this repository</a>. It contains the code and point-clouds we will use. The workshop intends to:</p>
+<p><a href="https://github.com/james-f-mcglade/CHN_lidRtutorial">This repository</a> contains the material for an 3 hour <code>lidR</code> tutorial workshop. You should install the material on your own machine from <a href="https://github.com/james-f-mcglade/CHN_lidRtutorial">this repository</a>. It contains the code and point-clouds we will use. The workshop intends to:</p>
 <ul>
 <li>Present an overview lidar processing with <code>lidR</code></li>
 <li>Give users an understanding of how <code>lidR</code> may fit their needs</li>
@@ -331,7 +339,7 @@ Tip
 <section id="download-workshop-materials" class="level2">
 <h2 class="anchored" data-anchor-id="download-workshop-materials">Download Workshop Materials</h2>
 <p>You can download the complete workshop package containing all code, data, and exercises here:</p>
-<p><a href="https://ln5.sync.com/dl/c7ee36c20#4cs2wj7d-fwqr6ism-jzrbc7ax-m2qes4fy">Download the entire Silvilaser 2025 lidar processing tutorial package (.zip, 296 MB)</a></p>
+<p><a href="https://ln5.sync.com/dl/c7ee36c20#4cs2wj7d-fwqr6ism-jzrbc7ax-m2qes4fy">Download the entire lidar processing tutorial package (.zip, 296 MB)</a></p>
 <p><a href="./data/ctg_class.zip">Download only the classified lidar files for 05_engine (.zip, 93 MB)</a></p>
 <p><a href="./data/ctg_norm.zip">Download only the normalized lidar files for 05_engine (.zip, 94 MB)</a></p>
 <p>Unzip the first to a folder, and run the <code>.Rproj</code> file with RStudio installed for the easiest experience.</p>
@@ -346,7 +354,7 @@ Tip
 <section id="requirements" class="level2">
 <h2 class="anchored" data-anchor-id="requirements">Requirements</h2>
 <section id="r-version-and-rstudio" class="level3">
-<h3 class="anchored" data-anchor-id="r-version-and-rstudio">R version and Rstudio</h3>
+<h3 class="anchored" data-anchor-id="r-version-and-rstudio">R version</h3>
 <ul>
 <li>You need to install a recent version of <code>R</code> i.e.&nbsp;<code>R 4.x</code> or newer.</li>
 <li>We will work with <a href="https://www.rstudio.com/">Rstudio</a>. This IDE is not mandatory to follow the workshop but is highly recommended.</li>
@@ -397,19 +405,18 @@ Tip
 <section id="workshop-schedule" class="level2 smaller">
 <h2 class="smaller anchored" data-anchor-id="workshop-schedule">Workshop schedule</h2>
 <ul>
-<li>Introduction to Lidar, LAStools, and lidR (09:00)</li>
-<li>Preprocessing with LAStools (9:20)</li>
-<li>Reading LAS and LAZ files (09:30)</li>
-<li>Point Classification and Filtering (9:35)</li>
-<li>Digital Terrain Models and Height Normalization (9:40)</li>
-<li>Canopy Height Models (9:50)</li>
-<li>Lidar Summary Metrics (9:55)</li>
-<li>Break (10:15-10:45)</li>
-<li>File Collection Processing Engine (10:45)</li>
-<li>Regions of Interest (11:0)</li>
-<li>Area Based Approach (11:10)</li>
-<li>Individual Tree Detection and Segmentation (11:30)</li>
-<li>Questions (11:50)</li>
+<li>Introduction to Lidar and the lidR package </li>
+<li>Reading LAS and LAZ files </li>
+<li>Point Classification and Filtering </li>
+<li>Digital Terrain Models and Height Normalization </li>
+<li>Canopy Height Models </li>
+<li>Lidar Summary Metrics </li>
+<li>Break (20 minutes)</li>
+<li>File Collection Processing Engine </li>
+<li>Regions of Interest </li>
+<li>Area Based Approach </li>
+<li>Individual Tree Detection and Segmentation </li>
+<li>Questions </li>
 </ul>
 </section>
 <section id="resources" class="level2">
@@ -448,26 +455,6 @@ Note
 </div>
 </div>
 </section>
-<section id="lastools" class="level2">
-<h2 class="anchored" data-anchor-id="lastools"><code>LAStools</code></h2>
-<p><a href="https://rapidlasso.de/product-overview/"><code>LAStools</code></a> is a collection of highly efficient, batch-scriptable, multicore command line tools for processing LiDAR data. It was originally developed by Martin Isenburg and is continually developed and improved by a team at rapidlasso.</p>
-<p><a href="img/lastools.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="img/lastools.svg" class="img-fluid" style="width:30.0%"></a></p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><code>LAStools</code> is not open-source software, but many of its powerful tools are freely avaliable to use, including those we will use in this workshop.</p>
-<p>Other tools require a license for commercial or educational use that can be purchased from rapidlasso.</p>
-<p>Please visit the <a href="https://rapidlasso.de/downloads/">LAStools website</a> for more information on how to download and install the software.</p>
-<p>The inital processing steps we will use in this workshop can be completed with the free version of <code>LAStools</code>, or you can make use of the pre-processed data provided in the workshop materials package.</p>
-</div>
-</div>
 
 
 </section>
