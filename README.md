@@ -1,14 +1,14 @@
 ## Materials
 
-[This repository](https://github.com/liamirwin/SL25_lidRtutorial) contains the material for an 180 minute `lidR` and `LAStools` tutorial workshop.
+[This repository](https://james-f-mcglade.github.io/CHN_lidRtutorial/) contains the material for an 180 minute `lidR` tutorial workshop.
 
-This workshop was created for the [`2025 Silvilaser Conference`](https://www.silvilaser2025.com/), held in Quebec City, Canada in September/October, 2025
+This workshop is based upon a previous version first developed by `Liam A.K. Irwin`, `Brent A. Murray` and `Sadie J.S. Russel` for the Silvilser 2025 conference, held in Quebec City, Canada. 
 
-This workshop was presented by `Liam A.K. Irwin`, `Brent A. Murray` and `Sadie J.S. Russell` members of the [University of British Columbia Integrated Remote Sensing Studio lab](https://irsslab.forestry.ubc.ca/).
+This version of the workshop was presented by `James McGlade`, `Heather Harper`, `Mara Mclaughlin`, `Nick Schindelhauer` and `Luca Iribarren` who are members of the [University of British Columbia Integrated Remote Sensing Studio lab](https://irsslab.forestry.ubc.ca/).
 
 The workshop intends to:
 
--   Introduce users to the `LAStools` software and the `lidR` package
+-   Introduce users to the `lidR` package
 -   Present an overview of what can be done with `lidR`
 -   Demonstrate key workflows for deriving forest inventory products from airborne laser scanning data
 -   Exercises will be done depending on available time - users are encouraged to work on these after the workshop!
@@ -40,8 +40,7 @@ install.packages(libs)
 
 ## Estimated schedule
 
--   Introduction to Lidar, LAStools, and lidR (09:00)
--   Preprocessing with LAStools (9:20)
+-   Introduction to Lidar, and lidR (09:00)
 -   Reading LAS and LAZ files (09:30)
 -   Point Classification and filtering (9:35)
 -   Digital Terrain Models and Height Normalization (9:40)
@@ -84,18 +83,6 @@ The current release version of `lidR` can be found on [CRAN](https://cran.r-proj
 
 > [!NOTE]
 > Since 2024, the `lidR` package is no longer supported by Laval University, but the software will remain free and open-source. `r-lidar` has transitioned into a company to ensure sustainability and now offers independent services for training courses, consulting, and development. Please feel free to visit their [website](https://www.r-lidar.com/) for more information.
-
-## `LAStools`
-
-[`LAStools`](https://rapidlasso.de/product-overview/) is a collection of highly efficient, batch-scriptable, multicore command line tools for processing LiDAR data. It was originally developed by Martin Isenburg and is continually developed and improved by a team at rapidlasso.
-
-`LAStools` is not open-source software, but many of its powerful tools are freely avaliable to use, including those we will use in this workshop.
-
-Other tools require a license for commercial or educational use that can be purchased from rapidlasso.
-
-Please visit the [LAStools website](https://rapidlasso.de/downloads/) for more information on how to download and install the software.
-
-The inital processing steps we will use in this workshop can be completed with the free version of `LAStools`, or you can make use of the pre-processed data provided in the workshop materials package.
 
 
 
