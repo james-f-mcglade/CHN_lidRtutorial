@@ -1,5 +1,5 @@
 # Individual Tree Detection & Segmentation
-# https://liamirwin.github.io/SL25_lidRtutorial/07_aba.html
+# https://james-f-mcglade.github.io/CHN_lidRtutorial/07_aba.html
 
 # Environment setup
 # -----------------
