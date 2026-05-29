@@ -1,5 +1,5 @@
 # Canopy Height Models
-# https://liamirwin.github.io/SL25_lidRtutorial/03_chm.html
+# https://james-f-mcglade.github.io/CHN_lidRtutorial/03_chm.html
 
 # Environment setup
 # -----------------
