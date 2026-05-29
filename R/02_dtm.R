@@ -1,5 +1,5 @@
 # Digital Terrain Models
-# https://liamirwin.github.io/SL25_lidRtutorial/02_dtm.html
+https://james-f-mcglade.github.io/CHN_lidRtutorial/02_dtm.html
 
 # Environment Setup
 # -----------------
