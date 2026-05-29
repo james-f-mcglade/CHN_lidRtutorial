@@ -1,5 +1,5 @@
 # LAScatalog
-# https://liamirwin.github.io/SL25_lidRtutorial/05_catalog.html
+# https://james-f-mcglade.github.io/CHN_lidRtutorial/05_catalog.html
 
 # Environment setup
 # -----------------
