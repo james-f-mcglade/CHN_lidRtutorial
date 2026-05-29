@@ -1,5 +1,5 @@
 # Individual Tree Detection & Segmentation
-# https://liamirwin.github.io/LPS_lidRtutorial/08_its.html
+# https://james-f-mcglade.github.io/CHN_lidRtutorial/08_its.html
 
 # Environment setup
 # -----------------
