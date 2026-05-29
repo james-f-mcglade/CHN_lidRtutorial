@@ -1,5 +1,5 @@
 # Lidar Summary Metrics
-# https://liamirwin.github.io/SL25_lidRtutorial/04_metrics.html
+# https://james-f-mcglade.github.io/CHN_lidRtutorial/04_metrics.html
 
 # Environment setup
 # -----------------
