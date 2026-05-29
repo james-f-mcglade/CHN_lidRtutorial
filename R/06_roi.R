@@ -1,5 +1,5 @@
 # Regions of Interest
-# https://liamirwin.github.io/SL25_lidRtutorial/06_roi.html
+# https://james-f-mcglade.github.io/CHN_lidRtutorial/06_roi.html
 
 # Environment setup
 # -----------------
