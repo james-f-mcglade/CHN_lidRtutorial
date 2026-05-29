@@ -1,5 +1,5 @@
 # Exercise Solutions
-# https://liamirwin.github.io/LPS_lidRtutorial/06_solutions.html
+# https://james-f-mcglade.github.io/CHN_lidRtutorial/09_solutions.html
 
 # Environment setup
 # -----------------
