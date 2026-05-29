@@ -1,5 +1,5 @@
 # Read/Plot/Query/Validate
-# https://liamirwin.github.io/SL25_lidRtutorial/01_read.html
+# https://james-f-mcglade.github.io/CHN_lidRtutorial/01_read.html
 # =========================
 # R Packages
 # ------------
